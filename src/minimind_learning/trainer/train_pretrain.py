@@ -105,7 +105,7 @@ if __name__ == "__main__":
     parser.add_argument('--num_hidden_layers', default=8, type=int, help="隐藏层数量")
     parser.add_argument('--max_seq_len', default=512, type=int, help="训练的最大截断长度")
     parser.add_argument('--use_moe', default=False, type=bool, help="是否使用MoE")
-    parser.add_argument("--data_path", type=str, default="../datasets/pretrain_hq.jsonl", help="预训练数据路径")
+    parser.add_argument("--data_path", type=str, default="../datasets/pretrain_t2t_mini.jsonl", help="预训练数据路径")
     parser.add_argument('--from_weight', default='none', type=str, help="基于哪个权重训练，为none则从头开始")
     parser.add_argument('--from_resume', default=0, type=int, help="是否自动检测&续训，0否1是")
     parser.add_argument("--use_wandb", action="store_true",default=True ,help="是否使用wandb")
