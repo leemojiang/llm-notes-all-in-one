@@ -1,0 +1,10 @@
+[book]
+authors = ["leemojiang"]
+language = "zh-CN"
+src = "notes"
+title = "MiniMind 学习笔记"
+
+[output.html]
+default-theme = "light"
+mathjax-support = true
+git-repository-url = "https://github.com/leemojiang/llm-from-scratch"
