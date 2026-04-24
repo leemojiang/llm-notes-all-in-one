@@ -1,36 +1,46 @@
-# MiniMind的学习笔记
+# MiniMind 学习笔记
+
+这个项目是对 [MiniMind](https://github.com/jingyaogong/minimind/tree/master?tab=readme-ov-file) 的学习整理。仓库中既保留了上游参考代码，也加入了我自己的代码阅读、实验记录和笔记。
 
 ## 项目结构
-这个项目是 [MiniMind](https://github.com/jingyaogong/minimind/tree/master?tab=readme-ov-file)项目的学习笔记.对它的代码进行了整理,补充了注释以及相应的笔记.
 
-使用src layout并使用UV进行环境管理,项目结构更加清晰.
-
-    - minimind_upstream/minimind 原始minimind项目,作为参考.
-    - src 代码所在位置
-    - tests 单元测试
-    - docs 文档
-    - datasets 数据集文件
-    - notebooks 放jupyter文件
+- `minimind_upstream`：上游 MiniMind 代码，作为对照参考
+- `src`：当前仓库的核心代码
+- `tests`：测试代码
+- `notes`：学习笔记，按 mdBook 方式组织
+- `datasets`：数据集文件
+- `notebooks`：实验用 Jupyter Notebook
 
 ## 项目使用
+
 ```bash
-    # 同步项目
-    uv sync --extra cpu
-    # 或者如果你有GPU支持,可以使用以下命令安装GPU版本的依赖
-    uv sync --extra gpu
-    
-    # git submodule 同步文件
-    git submodule update --init --recursive
+# 同步项目依赖
+uv sync --extra cpu
 
-    # 以开发模式安装包
-    uv pip install -e .
+# 如果你使用 CUDA 环境，也可以切到 cuda 依赖
+uv sync --extra cuda
 
-    # 登录swanlab
-    swanlab login
+# 同步 submodule
+git submodule update --init --recursive
+
+# 以开发模式安装当前项目
+uv pip install -e .
+
+# 登录 swanlab
+swanlab login
 ```
 
-## 目录
-- [0. 项目配置 ](docs/0.GettingStarted.md)
-- [2. Pretrain训练 快速开始](docs/Pretrain.md)
+## 笔记入口
+
+- [notes/SUMMARY.md](notes/SUMMARY.md)
+- [导读](notes/2.LLM_Pretrain.md)
+- [环境准备与项目结构](notes/0.GettingStarted.md)
+- [预训练快速开始](notes/1.Pretrain.md)
+
+如果本地安装了 `mdbook`，可以直接在仓库根目录运行：
+
+```bash
+mdbook serve
+```
     
 
