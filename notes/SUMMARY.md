@@ -19,7 +19,7 @@
     - [Long Context: 长上下文能力通常在改什么?](pretrain/2e.long-context.md)
 
 # Pretrain - Training
-- [Pretrain 训练导言] (pretrain/training-index.md)
+- [Pretrain 训练导言](pretrain/training-index.md)
 - [MiniMind Pretrain 实践入口](pretrain/4.practice.md)
 <!-- # 训练篇
 
