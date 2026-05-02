@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "LLM ALL in One: 从零开始构建大型语言模型"
+message: "If you use this project, please cite it using the metadata from this file."
+type: software
+authors:
+  - name: "leemojiang"
+year: 2026
+month: 5
+repository-code: "https://github.com/leemojiang/llm-all-in-one.git"
+url: "https://github.com/leemojiang/llm-all-in-one.git"
+license: "NOASSERTION"
+  
