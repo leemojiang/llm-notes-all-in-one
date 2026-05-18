@@ -40,6 +40,9 @@
 - [Transformer](topics/transformer.md)
 - [训练技巧](topics/training-tricks.md) -->
 
+# Utils
+- [MiniMind 3 升级内容](utils/minimind3_upgrade.md)
+
 # 附录
 - [Pytorch Cookbook](appendix/pytorch.md)
 

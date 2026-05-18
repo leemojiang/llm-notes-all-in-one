@@ -13,12 +13,12 @@ class MiniMindConfig(PretrainedConfig):
         bos_token_id: int = 1,  # begin of sentence
         eos_token_id: int = 2,  # end of sentence
         hidden_act: str = "silu",
-        hidden_size: int = 512,  # !
+        hidden_size: int = 768,  # !
         intermediate_size: int = None,  # FFN intermediate size
         max_position_embeddings: int = 32768,
         num_attention_heads: int = 8,  # !
         num_hidden_layers: int = 8,  # !
-        num_key_value_heads: int = 2,  # !
+        num_key_value_heads: int = 4,  # !
         head_dim: int = None,  # 每个 attention head 的维度
         vocab_size: int = 6400,  # !
         rms_norm_eps: float = 1e-6,
