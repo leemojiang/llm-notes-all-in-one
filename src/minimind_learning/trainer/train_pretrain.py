@@ -244,6 +244,7 @@ if __name__ == "__main__":
         model = DistributedDataParallel(model, device_ids=[local_rank])
 
     # ========== 8. 开始训练 ==========
+    Logger(f"Starting training from epoch {start_epoch}, step {start_step}, tokens_seen {start_tokens_seen}")
     for epoch in range(start_epoch, args.epochs):
         train_sampler and train_sampler.set_epoch(epoch)
         setup_seed(42 + epoch)
