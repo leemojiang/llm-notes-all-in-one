@@ -1,4 +1,5 @@
 import argparse
+import os
 import json
 import random
 import sys
@@ -50,6 +51,7 @@ def init_model(args):
         ))
         moe_suffix = "_moe" if args.use_moe else ""
         ckp = f"./{args.save_dir}/{args.weight}_{args.hidden_size}{moe_suffix}.pth"
+        print(f"Loading model from {os.path.abspath(ckp)} ...")
         model.load_state_dict(torch.load(ckp, map_location=args.device), strict=True)
         if not is_none(args.lora_weight):
             apply_lora(model, rank=args.lora_rank)
@@ -148,13 +150,13 @@ def run_eval_file(model, tokenizer, args):
 
 def run_chat(model, tokenizer, args):
     conversation = []
-    input_mode = int(input("[0] 自动测试\n[1] 手动输入\n"))
+    input_mode = str(input("[y] 自动测试\n[n] 手动输入\n"))
     streamer = TextStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
-    prompt_iter = DEFAULT_PROMPTS if input_mode == 0 else iter(lambda: input("💬: "), "")
+    prompt_iter = DEFAULT_PROMPTS if input_mode.lower() == "y" else iter(lambda: input("💬: "), "")
 
     for prompt in prompt_iter:
         setup_seed(args.seed if args.seed >= 0 else random.randint(0, 31415926))
-        if input_mode == 0:
+        if input_mode.lower() == "y":
             print(f"💬: {prompt}")
         print("🤖️: ", end="")
         response, conversation, metrics = generate_once(model, tokenizer, prompt, conversation, args, streamer=streamer)
