@@ -1,0 +1,35 @@
+.copy-latex-target {
+    position: relative;
+}
+
+.copy-latex-display {
+    display: inline-block;
+    min-width: 1em;
+}
+
+.copy-latex-btn {
+    position: absolute;
+    top: -0.85rem;
+    right: -0.35rem;
+    z-index: 10;
+    border: 1px solid var(--table-border-color);
+    border-radius: 4px;
+    background: var(--sidebar-bg);
+    color: var(--fg);
+    cursor: pointer;
+    font-size: 0.65rem;
+    line-height: 1;
+    opacity: 0;
+    padding: 0.18rem 0.28rem;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.copy-latex-btn:hover,
+.copy-latex-btn:focus {
+    opacity: 1;
+}
+
+.copy-latex-target:hover > .copy-latex-btn,
+.copy-latex-target:focus-within > .copy-latex-btn {
+    opacity: 0.85;
+}

@@ -8,3 +8,5 @@ title = "MiniMind 学习笔记"
 default-theme = "light"
 mathjax-support = true
 git-repository-url = "https://github.com/leemojiang/llm-notes-all-in-one"
+additional-js = ["notes/theme/copy-latex.js"]
+additional-css = ["notes/theme/copy-latex.css"]
