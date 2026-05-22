@@ -47,6 +47,7 @@
 
 # 附录
 - [Pytorch Cookbook](appendix/pytorch.md)
+- [Math Cookbook](appendix/math.md)
 
 # 参考
 - [参考资料与引用](ref/index.md)
