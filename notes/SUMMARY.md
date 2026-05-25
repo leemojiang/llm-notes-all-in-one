@@ -30,24 +30,16 @@
 - [MiniMind Pretrain 实践入口](pretrain/1.Pretrain.md)
 - [MiniMind Pretrain 实践总结](pretrain/1.Pretrain2.md)
 
-<!-- # 训练篇
-
-- [Pretrain](training/pretrain.md)
-- [SFT](training/sft.md)
-- [DPO](training/dpo.md)
-
-# 专题篇
-
-- [Tokenizer](topics/tokenizer.md)
-- [Transformer](topics/transformer.md)
-- [训练技巧](topics/training-tricks.md) -->
 
 # Utils
 - [MiniMind 3 升级内容](utils/minimind3_upgrade.md)
 
 # 附录
 - [Pytorch Cookbook](appendix/pytorch.md)
-- [Math Cookbook](appendix/math.md)
+- [Math Cookbook](appendix/math/math.index.md)
+    - [Probability Space](appendix/math/math.probability-space.md)
+    - [Expectation Notation](appendix/math/math.expectation.md)
+    - [Likelihood](appendix/math/math.likelihood.md)
 
 # 参考
 - [参考资料与引用](ref/index.md)
