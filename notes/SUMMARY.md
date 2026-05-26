@@ -30,23 +30,24 @@
 - [MiniMind Pretrain 实践入口](pretrain/1.Pretrain.md)
 - [MiniMind Pretrain 实践总结](pretrain/1.Pretrain2.md)
 
-<!-- # 训练篇
+# SFT
+- [SFT 目标和操作](sft/sft.md)
+- [SFT 数据和 Chat Template](sft/data-and-chat-template.md)
+- [Full SFT 和 Pretrain 脚本的区别](sft/full-sft-vs-pretrain-script.md)
+<!-- - [SFT 和 Pretrain 的异同](sft/sft-vs-pretrain.md) -->
+- [SFT 常见问题](sft/pitfalls.md)
+- [SFT Eval 应该怎么做](sft/eval.md)
 
-- [Pretrain](training/pretrain.md)
-- [SFT](training/sft.md)
-- [DPO](training/dpo.md)
-
-# 专题篇
-
-- [Tokenizer](topics/tokenizer.md)
-- [Transformer](topics/transformer.md)
-- [训练技巧](topics/training-tricks.md) -->
 
 # Utils
 - [MiniMind 3 升级内容](utils/minimind3_upgrade.md)
 
 # 附录
 - [Pytorch Cookbook](appendix/pytorch.md)
+- [Math Cookbook](appendix/math/math.index.md)
+    - [Probability Space](appendix/math/math.probability-space.md)
+    - [Expectation Notation](appendix/math/math.expectation.md)
+    - [Likelihood](appendix/math/math.likelihood.md)
 
 # 参考
 - [参考资料与引用](ref/index.md)
