@@ -1,6 +1,6 @@
 # SFT 数据和 Chat Template
 
-SFT 数据处理最核心的问题是：一条人类可读的对话样本，如何变成模型可以训练的 `input_ids` 和 `labels`。
+SFT 的重点，也是它和 Pretrain 阶段最大的区别，在于数据处理。本节以 MiniMind 的数据处理流程为例，实际说明 SFT 数据是如何构造出来的。这里有一个细节需要先强调：结构化输入样本如何变成模型可以训练的字符串？起作用的就是 chat template。它负责把结构化对话转换为模型输入文本，和 tokenizer 一样，也是一个隐含但非常重要的设置。一般来说，chat template 会和 tokenizer 一起定义。
 
 MiniMind 的这条链路可以概括为：
 
@@ -209,7 +209,7 @@ def post_processing_chat(prompt_content, empty_think_ratio=0.2):
 
 ## 第五步：tokenize 成 input_ids
 
-文本 prompt 会被 tokenizer 转成 token id：
+文本 prompt 会被 tokenizer 转成 token id，这一步与 Pretrain 基本一致：
 
 ```python
 input_ids = self.tokenizer(prompt).input_ids[: self.max_length]
@@ -279,17 +279,37 @@ self.eos_id = tokenizer(f"{tokenizer.eos_token}\n", add_special_tokens=False).in
 <|im_end|>\n
 ```
 
-简化后的 `labels` 可以理解为：
+简化后的 `labels` 可以理解为下面几段。这里不用 Markdown 表格展示，是因为 `<|im_start|>` 这类特殊 token 中包含竖线字符，放进表格后容易被 mdBook 误解析。
 
-| 区域 | input_ids 中的内容 | labels |
-|---|---|---|
-| user 片段 | `<|im_start|>user\n你好<|im_end|>\n` | 全部 `-100` |
-| assistant 角色头 | `<|im_start|>assistant\n` | `-100` |
-| assistant 回答 | `你好！<|im_end|>\n` | 对应 token id |
-| user 片段 | `<|im_start|>user\n再见<|im_end|>\n` | 全部 `-100` |
-| assistant 角色头 | `<|im_start|>assistant\n` | `-100` |
-| assistant 回答 | `再见！<|im_end|>\n` | 对应 token id |
-| padding | `<pad>` | `-100` |
+```text
+user 片段:
+input : <|im_start|>user\n你好<|im_end|>\n
+label : 全部 -100
+
+assistant 角色头:
+input : <|im_start|>assistant\n
+label : -100
+
+assistant 回答:
+input : 你好！<|im_end|>\n
+label : 对应 token id
+
+user 片段:
+input : <|im_start|>user\n再见<|im_end|>\n
+label : 全部 -100
+
+assistant 角色头:
+input : <|im_start|>assistant\n
+label : -100
+
+assistant 回答:
+input : 再见！<|im_end|>\n
+label : 对应 token id
+
+padding:
+input : <pad>
+label : -100
+```
 
 这里有一个容易忽略的细节：MiniMind 把 assistant 回答后面的 `<|im_end|>\n` 也纳入 label。这样模型不只学习回答内容，还学习什么时候结束回答。
 
