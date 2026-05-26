@@ -30,6 +30,14 @@
 - [MiniMind Pretrain 实践入口](pretrain/1.Pretrain.md)
 - [MiniMind Pretrain 实践总结](pretrain/1.Pretrain2.md)
 
+# SFT
+- [SFT 目标和操作](sft/sft.md)
+- [SFT 数据和 Chat Template](sft/data-and-chat-template.md)
+- [Full SFT 和 Pretrain 脚本的区别](sft/full-sft-vs-pretrain-script.md)
+- [SFT 和 Pretrain 的异同](sft/sft-vs-pretrain.md)
+- [SFT 常见问题](sft/pitfalls.md)
+
+
 
 # Utils
 - [MiniMind 3 升级内容](utils/minimind3_upgrade.md)
