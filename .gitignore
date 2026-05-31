@@ -12,3 +12,5 @@ wheels/
 
 
 book/
+tmp/
+*.pdf

@@ -38,6 +38,8 @@
 - [SFT 常见问题](sft/pitfalls.md)
 - [SFT Eval 应该怎么做](sft/eval.md)
 
+# Reinforcement Learning
+- [强化学习基础知识](rl/1.rl-basic.md)
 
 # Utils
 - [MiniMind 3 升级内容](utils/minimind3_upgrade.md)
